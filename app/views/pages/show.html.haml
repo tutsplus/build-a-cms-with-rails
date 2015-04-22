@@ -1,0 +1,5 @@
+%h1= @page.title
+%p
+  %em=time_ago_in_words @page.created_at
+
+= simple_format @page.body
