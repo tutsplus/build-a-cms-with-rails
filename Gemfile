@@ -49,6 +49,10 @@ gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'puma'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'responders'
 group :test do
   gem 'minitest-rails'
 end
