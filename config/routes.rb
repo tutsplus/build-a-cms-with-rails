@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :categories, only: [:show]
   resources :pages, only: [:show]
   namespace :admin do
     resources :pages # /admin/pages
+    resources :categories
   end
 
   Page.where.not("slug", nil).all.each do |page|

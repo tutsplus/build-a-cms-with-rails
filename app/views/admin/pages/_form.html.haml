@@ -16,4 +16,7 @@
     = f.label :slug
     = f.text_field :slug, class: "form-control"
   %p
+    =f.label :category_id
+    =f.select :category_id, Category.all.map { |category| [ category.name, category.id] }, class: "form-control"
+  %p
     = f.submit 'Save'
