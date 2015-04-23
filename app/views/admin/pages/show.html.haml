@@ -1,14 +1,6 @@
-%p#notice= notice
+%h1= @page.title
 
-%p
-  %b Title:
-  = @page.title
-%p
-  %b Body:
-  = @page.body
-%p
-  %b Slug:
-  = @page.slug
+= simple_format @page.body
 
 = link_to 'Edit', edit_admin_page_path(@page)
 \|
