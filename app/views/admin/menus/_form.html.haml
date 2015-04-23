@@ -1,0 +1,13 @@
+=form_for [ "admin", @menu ] do |f|
+  %p
+    =f.text_field :name
+
+  %h3 Menu items
+  =f.fields_for :menu_items do |c|
+    %p
+      =c.text_field :title
+      =c.text_field :url
+      =c.hidden_field :id
+
+  %p
+    =f.submit

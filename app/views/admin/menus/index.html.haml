@@ -1,0 +1,13 @@
+%h1 Menus
+
+%ul
+  -@menus.each do |menu|
+    %li
+      =menu.name
+      =link_to "edit", edit_admin_menu_path(menu)
+      %ul
+        -menu.menu_items.each do |item|
+          %li=link_to item.title, url_for_menu_item(item)
+
+%p
+  =link_to "New Menu", new_admin_menu_path
