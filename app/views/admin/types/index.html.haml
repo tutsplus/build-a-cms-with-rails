@@ -1,0 +1,13 @@
+%h1 Types
+
+%ul
+  -@types.each do |type|
+    %li
+      =type.name
+      =link_to "edit", edit_admin_type_path(type)
+      %ul
+        -type.field_definitions.each do |field|
+          %li=field.key
+
+%p
+  =link_to "New Type", new_admin_type_path

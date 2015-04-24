@@ -9,6 +9,15 @@
   %p
     = f.label :title
     = f.text_field :title, class: "form-control"
+
+  %h3 Custom fields
+
+  =f.fields_for :fields do |c|
+    %p
+      =c.label :value, c.object.field_definition.key
+      =c.text_field :value, class: "form-control"
+      =c.hidden_field :field_definition_id
+
   %p
     = f.label :body
     = f.cktext_area :body
@@ -19,4 +28,5 @@
     =f.label :category_id
     =f.select :category_id, Category.all.map { |category| [ category.name, category.id] }, class: "form-control"
   %p
+    =f.hidden_field :type_id
     = f.submit 'Save'

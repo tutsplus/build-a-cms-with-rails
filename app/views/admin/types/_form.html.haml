@@ -1,0 +1,13 @@
+=form_for [ "admin", @type ] do |f|
+  %p
+    =f.text_field :name, placeholder: "Name", class: "form-control input-lg"
+
+  %h3 Custom fields
+
+  =f.fields_for :field_definitions do |c|
+    %p
+      =c.text_field :key, class: "form-control"
+      =c.hidden_field :id
+
+  %p
+    =f.submit
