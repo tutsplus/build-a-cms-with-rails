@@ -3,7 +3,7 @@ class ContentController < ApplicationController
   before_filter :retrieve_menus
 
   def set_theme
-    theme = "default"
+    theme = Setting.where(key: "theme").first.value
     prepend_view_path "app/themes/#{theme}"
     self.class.layout "../../themes/#{theme}/layout"
   end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: redirect(Setting.where(key: "homepage").first.value)
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :categories, only: [:show]
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
     resources :menus, except: [:show]
     resources :pages # /admin/pages
     resources :categories
+    get "settings" => "settings#index"
+    put "settings" => "settings#update"
   end
 
   Page.where.not("slug", nil).all.each do |page|
@@ -19,7 +22,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'admin/pages#index'
+  #root to: redirect(Setting.where(key: "homepage").first.value)
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

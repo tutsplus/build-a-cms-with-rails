@@ -1,0 +1,14 @@
+%h1 Settings
+
+=form_tag "/admin/settings", method: "put" do
+  %p
+    %label Homepage:
+    =select_tag "settings[homepage]", homepage_options, class: "form-control"
+
+  %p
+    %label Theme:
+    =select_tag "settings[theme]", theme_options, class: "form-control"
+
+  %p
+    =submit_tag "Save settings", class: "btn btn-primary"
+
