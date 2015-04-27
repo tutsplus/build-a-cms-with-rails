@@ -1,0 +1,7 @@
+%nav
+  =link_to "Tuts+ CMS", root_path, class: "navbar-brand"
+  #main-nav
+    %ul
+      -@menus.find { |menu| menu.name == "Main Nav" }.menu_items.each do |item|
+        %li
+          =link_to item.title, item.url

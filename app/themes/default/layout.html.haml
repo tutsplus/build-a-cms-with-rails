@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta(charset='utf-8')
+    %title Tuts+ CMS
+    = csrf_meta_tags
+    =stylesheet_link_tag "theme-default"
+  %body
+    .container
+      =content_tag :div, notice, class: "flash bg-success" if notice
+      =content_tag :div, alert, class: "flash bg-danger" if alert
+      =render template: "_nav"
+      =yield
