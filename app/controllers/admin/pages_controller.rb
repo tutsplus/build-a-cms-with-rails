@@ -1,5 +1,5 @@
 module Admin
-  class PagesController < ApplicationController
+  class PagesController < AdminController
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
     # GET /pages

@@ -1,5 +1,5 @@
 module Admin
-  class MenusController < ApplicationController
+  class MenusController < AdminController
     def index
       @menus = Menu.all
     end

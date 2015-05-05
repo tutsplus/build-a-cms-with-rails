@@ -53,6 +53,7 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'responders'
+gem 'devise'
 group :test do
   gem 'minitest-rails'
 end
